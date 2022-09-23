@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class Seleccion {
+	public static void OrdenSelec(ArrayList<Integer> Datos) {
+		 int min = 0;
+		int temp = 0;
+		
+		
+		for (int pivote = 0; pivote < Datos.size(); pivote++) {
+			min=pivote;
+			for (int aux = pivote + 1; aux < Datos.size(); aux++) {
+				if(Datos.get(aux) < Datos.get(min)) {
+					min = aux;
+				}
+			}
+			temp = Datos.get(pivote);
+			Datos.set(pivote, Datos.get(min));
+			Datos.set(min, temp);
+		}
+	}
+	
+  
+  //Añadir datos y probar el codigo
+  
+  
+	public static void main(String[] args) {
+		ArrayList<Integer> Cubetas = new ArrayList<Integer>();
+		Cubetas.add(23);
+		Cubetas.add(12);
+		Cubetas.add(8);
+		Cubetas.add(7);
+		Cubetas.add(1);
+		Cubetas.add(4);
+		Cubetas.add(3);
+		Cubetas.add(2);
+		Cubetas.add(11);
+		
+		OrdenSelec(Cubetas);
+		
+		for (int i = 0; i < Cubetas.size(); i++) {
+			System.out.println(Cubetas.get(i));
+		}
+		
+	}
+
+}
